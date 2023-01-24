@@ -1,5 +1,5 @@
 function convertToRoman(num) {
-  	const obj = {
+  	const romanNumerals = {
       0:['M',1000], 
       1:['D', 500], 
       2:['C', 100], 
@@ -11,10 +11,20 @@ function convertToRoman(num) {
 
   //your code here
 
+	 
+  let roman = '';
+  for (let key in romanNumerals) {
+    while (num >= romanNumerals[key]) {
+      roman += key;
+      num -= romanNumerals[key];
+    }
+  }
+  return roman;
+
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
-// console.log(convertToRoman(36));
+ console.log(convertToRoman(36));
 
 
 
